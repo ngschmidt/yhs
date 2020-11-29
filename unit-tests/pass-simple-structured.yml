@@ -1,0 +1,19 @@
+places:
+  - name: Alaska
+    cities:
+      - name: Anchorage
+      - name: Utgiavik
+      - name: Fairbanks
+      - name: Juneau
+  - name: Wyoming
+    cities:
+      - name: Cheyenne
+      - name: Jackson
+      - name: Casper
+  - name: Montana
+    cities:
+      - name: Bozeman
+      - name: Helena
+      - name: Billings
+      - name: Great Falls
+      - name: Big Sky

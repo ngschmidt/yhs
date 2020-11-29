@@ -1,0 +1,6 @@
+- hosts: localhost
+  tasks:
+    - name: 'Clone this repo'
+      git:
+        repo: 'git@github.com:ngschmidt/yhs.git'
+        dest: '/home/ngschmidt/ansible-nsxt'
