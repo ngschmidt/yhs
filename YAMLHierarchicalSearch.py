@@ -20,8 +20,9 @@ class YAMLHierarchicalSearch:
     yhs_yaml = YAML(typ='safe')
 
     # And construct with specific endpoint
-    def __init__(self, init_data):
+    def __init__(self, init_data, init_verbosity):
         # Set variables from constructor
+        self.yhs_verbosity = init_verbosity
         self.yhs_data = init_data
         print(self.yhs_data)
         print(self.yhs_yaml.load(init_data))

@@ -15,4 +15,5 @@ parser.add_argument('-v', '--verbosity', action='count', default=0, help='Output
 parser.add_argument('input', help='Data input')
 args = parser.parse_args()
 
-yaml_input = YAMLHierarchicalSearch(args.input)
+yaml_input = YAMLHierarchicalSearch(args.input, args.verbosity)
+yaml_input.print_class()
