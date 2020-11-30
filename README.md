@@ -17,6 +17,8 @@ Quick and easy hierarchical utility to parse YAML/JSON in a tree search, or simp
 ## Goals
 
 - Quick and dirty YAML Structure Validation
+- Accept either file handles or a string
+- Accept as a pipe
 - Search top level tree members for a string, then return the tree below it
 - Search a provided depth tree members for a stirng, then return the tree below it
 - Search arbitrary depths for a string, then return the tree below it

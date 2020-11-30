@@ -16,4 +16,3 @@ parser.add_argument('input', help='Data input')
 args = parser.parse_args()
 
 yaml_input = YAMLHierarchicalSearch(args.input, args.verbosity)
-yaml_input.print_class()
