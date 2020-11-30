@@ -4,6 +4,7 @@
 # 29 Nov 2020
 
 # Imports
+from ruamel.yaml import YAML
 
 # Object Definitions
 
@@ -15,28 +16,21 @@ class YAMLHierarchicalSearch:
     #
     yhs_data = ""
     yhs_filename = ""
+    yhs_verbosity = ""
+    yhs_yaml = YAML(typ='safe')
 
     # And construct with specific endpoint
     def __init__(self, init_data):
         # Set variables from constructor
         self.yhs_data = init_data
         print(self.yhs_data)
-    
-    @classmethod
-    def from_file_name (cls, init_filename):
-        "Initialize YAML data from a file"
-        try:
-            init_data = open(init_filename).readlines()
-        except FileNotFoundError:
-            print('E1000: File not found!')
-        except:
-            print('E9999: Unknown Error opening file!')
-        else:
-            return cls(init_data)
-    
+        print(self.yhs_yaml.load(init_data))
+
     # Functions
 
     # Print All Class Objects
     def print_class(self):
         print(self.yhs_data)
         print(self.yhs_filename)
+        print(self.yhs_verbosity)
+        print(self.yhs_yaml)

@@ -27,8 +27,8 @@ TBD
 
 ### Dependencies
 
-- Python 3.
-- JSON
+- Python 3
+- `python3-ruamel.yaml`
 
 ## TODO
 
