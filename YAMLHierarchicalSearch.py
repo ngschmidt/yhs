@@ -34,7 +34,7 @@ class YAMLHierarchicalSearch:
             print('E1001: YAML Parsing error!')
             if (self.yhs_verbosity > 0):
                 print(exc)
-        except Exception as exc: 
+        except Exception as exc:
             print('E9999: An unknown error has occurred!')
             if (self.yhs_verbosity > 0):
                 print(exc)
@@ -58,5 +58,5 @@ class YAMLHierarchicalSearch:
             print('YAML Data: ' + str(self.yhs_data))
             print(type(self.yhs_data))
             print('Parsing Verbosity: ' + str(self.yhs_verbosity))
-            print('RUAMEL Dump: ' + str (self.yhs_yaml))
+            print('RUAMEL Dump: ' + str(self.yhs_yaml))
             return True
