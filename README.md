@@ -12,7 +12,8 @@ Quick and easy hierarchical utility to parse YAML/JSON in a tree search, or simp
 
 ### Actual Usage
 
-`yhs.py -f example.yml`
+`yhs.py example.yml`
+`yhs.py "yaml"`
 
 ## Goals
 
