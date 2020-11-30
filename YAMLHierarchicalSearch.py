@@ -23,9 +23,17 @@ class YAMLHierarchicalSearch:
     def __init__(self, init_data, init_verbosity):
         # Set variables from constructor
         self.yhs_verbosity = init_verbosity
-        self.yhs_data = init_data
-        print(self.yhs_data)
-        print(self.yhs_yaml.load(init_data))
+        # Other classes don't have a good way to type data without calling the OS. Let's create a file handle, and use the exception to see if it's a file.
+        try:
+            self.yhs_data = self.yhs_yaml.load(open(init_data, 'r'))
+        except FileNotFoundError:
+            self.yhs_data = init_data
+        except Exception as exc: 
+            print('E9999: An unknown error has occurred!')
+            print(exc)
+        else:
+            if self.yhs_verbosity:
+                print(self.yhs_data)
 
     # Functions
 
