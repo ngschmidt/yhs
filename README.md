@@ -32,6 +32,7 @@ TBD
 
 - Python 3
 - `python3-ruamel.yaml`
+- `yaml`
 
 ## TODO
 
