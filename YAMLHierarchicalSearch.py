@@ -6,6 +6,7 @@
 # Imports
 from ruamel.yaml import YAML
 from ruamel.yaml import scanner
+import yaml
 
 # Object Definitions
 
@@ -51,12 +52,38 @@ class YAMLHierarchicalSearch:
 
     # Print All Class Objects
     def print_class(self):
-        if self.yhs_data == "":
-            print('No Valid YAML Data found!')
-            return False
-        else:
+        if isinstance(self.yhs_data, dict):
             print('YAML Data: ' + str(self.yhs_data))
             print(type(self.yhs_data))
             print('Parsing Verbosity: ' + str(self.yhs_verbosity))
             print('RUAMEL Dump: ' + str(self.yhs_yaml))
-            return True
+            return True            
+        else:
+            print('No Valid YAML Data found! type is ' + str(type(self.yhs_data)))
+            return False
+
+
+    # Find Elements hat match names provided
+    def find_element_by_string(self, search_string, search_obj=None):
+        if not search_obj:
+            search_obj = self.yhs_data
+        if isinstance(search_obj, (dict)):
+            for i in search_obj:
+                if search_string in str(search_obj[i]):
+                    print(yaml.dump(search_obj[i]))
+                if isinstance(search_obj[i], (dict, list)):
+                    self.find_element_by_string(search_string, search_obj[i])
+                if self.yhs_verbosity:
+                    print('Found a ' + str(type(search_obj[i])))
+                else:
+                    pass
+        elif isinstance(search_obj, (list)):
+            for i in search_obj:
+                if search_string in str(i):
+                    print(yaml.dump(i))
+                if isinstance(i, (dict, list)):
+                    self.find_element_by_string(search_string, i)   
+                if self.yhs_verbosity:
+                    print('Found a ' + str(type(i)))
+        else:
+            pass

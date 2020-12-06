@@ -13,6 +13,8 @@ from YAMLHierarchicalSearch import YAMLHierarchicalSearch
 parser = argparse.ArgumentParser(description='Process YAML Inputs')
 parser.add_argument('-v', '--verbosity', action='count', default=0, help='Output Verbosity')
 parser.add_argument('input', help='Data input')
+parser.add_argument('string', help='Search String')
 args = parser.parse_args()
 
 yaml_input = YAMLHierarchicalSearch(args.input, args.verbosity)
+yaml_input.find_element_by_string(args.string)
